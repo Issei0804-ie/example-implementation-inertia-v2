@@ -30,6 +30,7 @@ Route::prefix('example')->group(function () {
        Route::get('/', [\App\Http\Controllers\Example\PrefetchingController::class, 'index'])->name('prefetching.index');
        Route::get('/show/{user}', [\App\Http\Controllers\Example\PrefetchingController::class, 'show'])->name('prefetching.index');
     });
+    Route::get('defer', \App\Http\Controllers\Example\DeferController::class);
 });
 
 require __DIR__.'/auth.php';
