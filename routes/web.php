@@ -26,6 +26,10 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('example')->group(function () {
     Route::get('pooling', \App\Http\Controllers\Example\PoolingController::class);
+    Route::prefix('prefetching')->group(function () {
+       Route::get('/', [\App\Http\Controllers\Example\PrefetchingController::class, 'index'])->name('prefetching.index');
+       Route::get('/show/{user}', [\App\Http\Controllers\Example\PrefetchingController::class, 'show'])->name('prefetching.index');
+    });
 });
 
 require __DIR__.'/auth.php';
