@@ -24,4 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('example')->group(function () {
+    Route::get('pooling', \App\Http\Controllers\Example\PoolingController::class);
+});
+
 require __DIR__.'/auth.php';
