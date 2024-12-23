@@ -31,6 +31,7 @@ Route::prefix('example')->group(function () {
        Route::get('/show/{user}', [\App\Http\Controllers\Example\PrefetchingController::class, 'show'])->name('prefetching.index');
     });
     Route::get('defer', \App\Http\Controllers\Example\DeferController::class);
+    Route::get('merge-props', \App\Http\Controllers\Example\MergingPropsController::class);
 });
 
 require __DIR__.'/auth.php';
