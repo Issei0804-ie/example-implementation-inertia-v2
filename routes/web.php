@@ -32,6 +32,7 @@ Route::prefix('example')->group(function () {
     });
     Route::get('defer', \App\Http\Controllers\Example\DeferController::class);
     Route::get('merge-props', \App\Http\Controllers\Example\MergingPropsController::class);
+    Route::get('load-when-visible', \App\Http\Controllers\Example\LoadWhenVisibleController::class);
 });
 
 require __DIR__.'/auth.php';
